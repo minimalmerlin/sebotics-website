@@ -2,78 +2,56 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { ctaConfig } from "@/lib/config";
 
 const nav = [
   {
     label: "Lösungen",
     href: "/loesungen/",
     children: [
-      { label: "Serviceroboter", href: "/loesungen/serviceroboter/" },
-      { label: "Reinigungsroboter", href: "/loesungen/reinigungsroboter/" },
-      { label: "Transportroboter", href: "/loesungen/transportroboter/" },
-      { label: "Hotelroboter", href: "/loesungen/hotelroboter/" },
-      { label: "Sicherheitsroboter", href: "/loesungen/sicherheitsroboter/" },
-      { label: "Robotics as a Service", href: "/raas/" },
+      { label: "Serviceroboter", href: "/loesungen/serviceroboter/", desc: "Für Gastronomie, Hotellerie & Pflege" },
+      { label: "Reinigungsroboter", href: "/loesungen/reinigungsroboter/", desc: "Autonome Flächenreinigung ab 200 m²" },
+      { label: "Transportroboter", href: "/loesungen/transportroboter/", desc: "Intralogistik & Materialflüsse" },
+      { label: "Hotelroboter", href: "/loesungen/hotelroboter/", desc: "Room-Service & Gästeauslieferung" },
+      { label: "Sicherheitsroboter", href: "/loesungen/sicherheitsroboter/", desc: "Monitoring & autonome Rundgänge" },
+      { label: "Robotics as a Service", href: "/raas/", desc: "Einstieg ohne Kapitalinvestition" },
     ],
   },
   {
     label: "Branchen",
     href: "/branchen/",
     children: [
-      { label: "Gastronomie", href: "/branchen/gastronomie/" },
-      { label: "Hotellerie", href: "/branchen/hotellerie/" },
-      { label: "Industrie", href: "/branchen/industrie/" },
-      { label: "Logistik", href: "/branchen/logistik/" },
-      { label: "Gesundheitswesen", href: "/branchen/gesundheitswesen/" },
-      { label: "Facility Management", href: "/branchen/facility-management/" },
+      { label: "Gastronomie", href: "/branchen/gastronomie/", desc: "Service & Tischroboter" },
+      { label: "Hotellerie", href: "/branchen/hotellerie/", desc: "Hotelroboter & Room-Service" },
+      { label: "Industrie", href: "/branchen/industrie/", desc: "Intralogistik & Reinigung" },
+      { label: "Logistik", href: "/branchen/logistik/", desc: "AMR & Transportautomation" },
+      { label: "Gesundheitswesen", href: "/branchen/gesundheitswesen/", desc: "Krankenhaus & Pflege" },
+      { label: "Facility Management", href: "/branchen/facility-management/", desc: "Reinigungsautomation" },
     ],
   },
   {
     label: "ROI & Modelle",
     href: "/roi/",
     children: [
-      { label: "ROI-Check", href: "/roi/" },
-      { label: "Robotik mieten", href: "/robotik-mieten/" },
-      { label: "Kauf vs. Miete vs. RaaS", href: "/raas-vs-kauf/" },
-      { label: "Pilotprojekt", href: "/pilotprojekt/" },
-      { label: "Wartung & Support", href: "/wartung-support/" },
+      { label: "ROI-Check", href: "/roi/", desc: "Wann lohnt sich Robotik?" },
+      { label: "Kauf vs. Miete vs. RaaS", href: "/raas-vs-kauf/", desc: "Vollständiger Vergleich" },
+      { label: "Pilotprojekt", href: "/pilotprojekt/", desc: "30–90 Tage Pilot" },
+      { label: "Wartung & Support", href: "/wartung-support/", desc: "SLA & Monitoring" },
     ],
   },
   { label: "Case Studies", href: "/case-studies/" },
-  { label: "Blog", href: "/blog/" },
-  { label: "Über Sebotics", href: "/ueber-uns/" },
+  { label: "Über uns", href: "/ueber-uns/" },
 ];
-
-const mobileAccordion = (items: { label: string; href: string }[], closeSheet: () => void) =>
-  items.map((item) => (
-    <Link
-      key={item.href}
-      href={item.href}
-      onClick={closeSheet}
-      className="block py-2 pl-4 text-sm text-slate-600 hover:text-slate-900"
-    >
-      {item.label}
-    </Link>
-  ));
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
-  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 10);
+    const handler = () => setScrolled(window.scrollY > 8);
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
@@ -81,55 +59,46 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur-sm transition-shadow duration-200",
-        scrolled ? "shadow-md" : "shadow-none border-slate-200"
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        scrolled
+          ? "bg-white/95 backdrop-blur-md border-b border-zinc-200 shadow-sm"
+          : "bg-white border-b border-zinc-100"
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between gap-8">
+        <div className="flex h-16 items-center justify-between gap-6">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <span className="text-xl font-bold tracking-tight text-slate-900">
-              Sebo<span className="text-orange-500">tics</span>
-            </span>
+            <div className="flex items-center gap-1.5">
+              <div className="size-7 rounded bg-cyan-500 flex items-center justify-center shrink-0">
+                <svg viewBox="0 0 20 20" className="size-4 fill-white" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 5c-3.314 0-6 2.686-6 6h2c0-2.21 1.79-4 4-4s4 1.79 4 4h2c0-3.314-2.686-6-6-6zm-4 7v2h8v-2H6z"/>
+                </svg>
+              </div>
+              <span className="text-[17px] font-bold tracking-tight text-zinc-900">
+                Sebo<span className="text-cyan-500">tics</span>
+              </span>
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-0.5">
             {nav.map((item) =>
               item.children ? (
                 <div key={item.href} className="relative group">
-                  <button
-                    className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 rounded-md hover:bg-slate-50 transition-colors"
-                    onMouseEnter={() => setOpenMenu(item.label)}
-                    onMouseLeave={() => setOpenMenu(null)}
-                  >
+                  <button className="flex items-center gap-1 px-3.5 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 rounded-lg hover:bg-zinc-50 transition-colors">
                     {item.label}
-                    <ChevronDown className="size-3.5 text-slate-400 group-hover:text-slate-600 transition-transform group-hover:rotate-180 duration-200" />
+                    <ChevronDown className="size-3.5 text-zinc-400 transition-transform duration-200 group-hover:rotate-180" />
                   </button>
-                  {/* Mega-dropdown */}
-                  <div
-                    className={cn(
-                      "absolute top-full left-0 mt-1 w-56 rounded-md border border-slate-200 bg-white shadow-lg py-1 transition-all duration-150",
-                      "opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto"
-                    )}
-                    onMouseEnter={() => setOpenMenu(item.label)}
-                    onMouseLeave={() => setOpenMenu(null)}
-                  >
-                    <Link
-                      href={item.href}
-                      className="block px-4 py-2 text-xs font-mono font-medium uppercase tracking-wider text-slate-400 hover:text-orange-500"
-                    >
-                      Alle {item.label}
-                    </Link>
-                    <div className="border-t border-slate-100 my-1" />
+                  <div className="absolute top-full left-0 mt-1.5 w-64 rounded-xl border border-zinc-200 bg-white shadow-xl shadow-zinc-100/80 py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-150 translate-y-1 group-hover:translate-y-0">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-4 py-2 text-sm text-slate-700 hover:text-slate-900 hover:bg-slate-50"
+                        className="flex flex-col px-4 py-2.5 hover:bg-zinc-50 transition-colors"
                       >
-                        {child.label}
+                        <span className="text-sm font-medium text-zinc-900">{child.label}</span>
+                        <span className="text-xs text-zinc-500 mt-0.5">{child.desc}</span>
                       </Link>
                     ))}
                   </div>
@@ -138,7 +107,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="px-3 py-2 text-sm font-medium text-slate-700 hover:text-slate-900 rounded-md hover:bg-slate-50 transition-colors"
+                  className="px-3.5 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 rounded-lg hover:bg-zinc-50 transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -148,67 +117,70 @@ export function Header() {
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-2 shrink-0">
-            <Link href={ctaConfig.secondary.href}>
-              <Button variant="outline" size="sm" className="rounded-md border-slate-300">
-                Demo anfragen
-              </Button>
+            <Link href="/kontakt/" className="px-3.5 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">
+              Demo anfragen
             </Link>
-            <Link href={ctaConfig.primary.href}>
-              <Button
-                size="sm"
-                className="rounded-md bg-orange-500 hover:bg-orange-600 text-white border-0"
-              >
-                Konfigurator starten
-              </Button>
+            <Link
+              href="/konfigurator/"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-600 px-4 py-2 text-sm font-semibold text-white transition-colors"
+            >
+              Konfigurator
+              <ArrowRight className="size-3.5" />
             </Link>
           </div>
 
-          {/* Mobile Menu */}
-          <Sheet open={open} onOpenChange={setOpen}>
+          {/* Mobile trigger */}
+          <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger
-              render={
-                <Button variant="ghost" size="icon-sm" className="lg:hidden" />
-              }
+              render={<Button variant="ghost" size="icon-sm" className="lg:hidden text-zinc-600" />}
             >
               <Menu className="size-5" />
-              <span className="sr-only">Menü öffnen</span>
             </SheetTrigger>
-            <SheetContent side="right" className="w-80 overflow-y-auto p-0">
-              <SheetHeader className="border-b border-slate-100 px-6 py-4">
+            <SheetContent side="right" className="w-80 p-0">
+              <SheetHeader className="px-6 py-4 border-b border-zinc-100">
                 <SheetTitle className="text-left">
-                  <span className="text-xl font-bold tracking-tight">
-                    Sebo<span className="text-orange-500">tics</span>
+                  <span className="text-lg font-bold text-zinc-900">
+                    Sebo<span className="text-cyan-500">tics</span>
                   </span>
                 </SheetTitle>
               </SheetHeader>
-              <nav className="px-6 py-4 space-y-4">
+              <nav className="px-4 py-4 overflow-y-auto">
                 {nav.map((item) => (
-                  <div key={item.href}>
+                  <div key={item.href} className="mb-4">
                     <Link
                       href={item.href}
-                      onClick={() => setOpen(false)}
-                      className="block text-sm font-semibold text-slate-900 hover:text-orange-500 mb-1"
+                      onClick={() => setMobileOpen(false)}
+                      className="block px-2 py-1 text-sm font-semibold text-zinc-900 mb-1"
                     >
                       {item.label}
                     </Link>
                     {item.children && (
-                      <div className="border-l border-slate-200 ml-1">
-                        {mobileAccordion(item.children, () => setOpen(false))}
+                      <div className="pl-2 border-l-2 border-zinc-100">
+                        {item.children.map((c) => (
+                          <Link
+                            key={c.href}
+                            href={c.href}
+                            onClick={() => setMobileOpen(false)}
+                            className="block py-1.5 px-2 text-sm text-zinc-500 hover:text-zinc-900"
+                          >
+                            {c.label}
+                          </Link>
+                        ))}
                       </div>
                     )}
                   </div>
                 ))}
               </nav>
-              <div className="px-6 pb-6 space-y-2 border-t border-slate-100 pt-4">
-                <Link href={ctaConfig.primary.href} onClick={() => setOpen(false)}>
-                  <Button className="w-full rounded-md bg-orange-500 hover:bg-orange-600 text-white border-0">
-                    Konfigurator starten
-                  </Button>
+              <div className="px-4 pb-6 pt-2 border-t border-zinc-100 space-y-2">
+                <Link href="/konfigurator/" onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-center gap-2 w-full rounded-lg bg-cyan-500 hover:bg-cyan-600 px-4 py-3 text-sm font-semibold text-white transition-colors"
+                >
+                  Konfigurator starten
                 </Link>
-                <Link href={ctaConfig.secondary.href} onClick={() => setOpen(false)}>
-                  <Button variant="outline" className="w-full rounded-md">
-                    Demo anfragen
-                  </Button>
+                <Link href="/kontakt/" onClick={() => setMobileOpen(false)}
+                  className="flex items-center justify-center w-full rounded-lg border border-zinc-200 px-4 py-3 text-sm font-medium text-zinc-700 hover:bg-zinc-50 transition-colors"
+                >
+                  Demo anfragen
                 </Link>
               </div>
             </SheetContent>

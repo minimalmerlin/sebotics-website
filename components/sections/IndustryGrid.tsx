@@ -1,39 +1,46 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { stagger, fadeUp, viewportConfig } from "@/lib/animations";
 import { industries } from "@/lib/config";
 
-const industryIcons: Record<string, string> = {
-  gastronomie: "🍽️",
-  hotellerie: "🏨",
-  industrie: "🏭",
-  logistik: "📦",
-  gesundheitswesen: "🏥",
-  "facility-management": "🏢",
+const industryImages: Record<string, string> = {
+  gastronomie:
+    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80&auto=format&fit=crop",
+  hotellerie:
+    "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80&auto=format&fit=crop",
+  industrie:
+    "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80&auto=format&fit=crop",
+  logistik:
+    "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80&auto=format&fit=crop",
+  gesundheitswesen:
+    "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=800&q=80&auto=format&fit=crop",
+  "facility-management":
+    "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format&fit=crop",
 };
 
 export function IndustryGrid() {
   return (
-    <section className="py-16 md:py-20 bg-white">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-28 bg-white">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={viewportConfig}
           variants={stagger}
         >
-          <motion.div variants={fadeUp} className="mb-12">
-            <p className="text-xs font-mono uppercase tracking-widest text-orange-500 mb-3">
-              Robotik nach Branche
+          <motion.div variants={fadeUp} className="mb-14">
+            <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-cyan-600 mb-3">
+              Nach Branche
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-              Für welche Branche robotisieren Sie?
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">
+              Für welche Branche automatisieren Sie?
             </h2>
-            <p className="mt-3 text-lg text-slate-600 max-w-2xl">
-              Jede Branche hat andere Engpässe. Wir zeigen die passende Lösung — mit Voraussetzungen, ROI und nächstem Schritt.
+            <p className="mt-3 text-lg text-zinc-500 max-w-2xl">
+              Jede Branche hat andere operative Engpässe. Wir zeigen die passende Lösung mit Voraussetzungen, ROI und nächstem Schritt.
             </p>
           </motion.div>
 
@@ -42,23 +49,31 @@ export function IndustryGrid() {
               <motion.div key={industry.slug} variants={fadeUp}>
                 <Link
                   href={`/branchen/${industry.slug}/`}
-                  className="group flex flex-col h-full border border-slate-200 bg-white rounded-sm p-6 hover:border-orange-300 hover:shadow-sm transition-all duration-150"
+                  className="group relative flex flex-col overflow-hidden rounded-2xl bg-zinc-900 h-72 hover:shadow-2xl hover:shadow-zinc-900/20 transition-all duration-300"
                 >
-                  <div className="text-3xl mb-4">{industryIcons[industry.slug] ?? "🤖"}</div>
-                  <h3 className="font-bold text-slate-900 group-hover:text-orange-600 transition-colors mb-2">
-                    {industry.title}
-                  </h3>
-                  <ul className="text-sm text-slate-500 space-y-1 mb-4 flex-1">
-                    {industry.pains.slice(0, 2).map((pain) => (
-                      <li key={pain} className="flex gap-2">
-                        <span className="text-slate-300 shrink-0">→</span>
-                        {pain}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex items-center gap-1 text-sm font-medium text-orange-500 group-hover:gap-2 transition-all">
-                    Branchenlösung ansehen
-                    <ArrowRight className="size-3.5" />
+                  {/* Background image */}
+                  <Image
+                    src={industryImages[industry.slug] ?? "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&q=80&auto=format&fit=crop"}
+                    alt={industry.title}
+                    fill
+                    className="object-cover opacity-50 group-hover:opacity-60 group-hover:scale-105 transition-all duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  {/* Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-900/40 to-transparent" />
+
+                  {/* Content */}
+                  <div className="relative mt-auto p-6">
+                    <p className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 mb-2">
+                      Branchenlösung
+                    </p>
+                    <h3 className="text-lg font-bold text-white mb-3">
+                      {industry.title}
+                    </h3>
+                    <div className="flex items-center gap-1.5 text-sm font-medium text-cyan-400 group-hover:gap-2.5 transition-all duration-200">
+                      Ansehen
+                      <ArrowRight className="size-3.5" />
+                    </div>
                   </div>
                 </Link>
               </motion.div>

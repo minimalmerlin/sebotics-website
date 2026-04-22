@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { brand } from "@/lib/config";
+import { ArrowRight } from "lucide-react";
 
 const footerLinks = {
   Lösungen: [
@@ -20,7 +20,6 @@ const footerLinks = {
   ],
   "ROI & Modelle": [
     { label: "ROI-Check", href: "/roi/" },
-    { label: "Robotik mieten", href: "/robotik-mieten/" },
     { label: "Kauf vs. Miete vs. RaaS", href: "/raas-vs-kauf/" },
     { label: "Pilotprojekt", href: "/pilotprojekt/" },
     { label: "Wartung & Support", href: "/wartung-support/" },
@@ -36,41 +35,40 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-300">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
-          {/* Brand */}
-          <div className="col-span-2 md:col-span-4 lg:col-span-1">
-            <Link href="/" className="inline-block mb-4">
-              <span className="text-xl font-bold text-white">
-                Sebo<span className="text-orange-400">tics</span>
-              </span>
-            </Link>
-            <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
-              {brand.role} im deutschsprachigen Raum. Beratung, Konfiguration, Pilot, Integration und Betrieb aus einer Hand.
+    <footer className="bg-[#030712] text-zinc-400">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-20 pb-8">
+        {/* Top CTA bar */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-16 border-b border-zinc-800">
+          <div>
+            <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-zinc-500 mb-2">
+              Bereit für den nächsten Schritt?
             </p>
-            <div className="mt-6">
-              <Link
-                href="/konfigurator/"
-                className="inline-block rounded-md bg-orange-500 hover:bg-orange-600 px-4 py-2 text-sm font-medium text-white transition-colors"
-              >
-                Konfigurator starten
-              </Link>
-            </div>
+            <p className="text-xl font-bold text-white">
+              Starten Sie mit dem kostenlosen Konfigurator.
+            </p>
           </div>
+          <Link
+            href="/konfigurator/"
+            className="inline-flex items-center gap-2 shrink-0 rounded-xl bg-cyan-500 hover:bg-cyan-400 px-6 py-3 text-sm font-semibold text-white transition-colors"
+          >
+            Konfigurator starten
+            <ArrowRight className="size-3.5" />
+          </Link>
+        </div>
 
-          {/* Link columns */}
+        {/* Link grid */}
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 py-16">
           {Object.entries(footerLinks).map(([section, links]) => (
             <div key={section}>
-              <h3 className="text-xs font-mono font-semibold uppercase tracking-widest text-slate-400 mb-4">
+              <h3 className="text-[11px] font-mono font-semibold uppercase tracking-[0.15em] text-zinc-500 mb-5">
                 {section}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm text-slate-400 hover:text-white transition-colors"
+                      className="text-sm text-zinc-500 hover:text-white transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -81,15 +79,26 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-16 border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-slate-500">
-            © {new Date().getFullYear()} Sebotics. Alle Rechte vorbehalten.
-          </p>
+        {/* Brand + legal */}
+        <div className="border-t border-zinc-800 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <div className="size-6 rounded bg-cyan-500 flex items-center justify-center">
+              <svg viewBox="0 0 20 20" className="size-3.5 fill-white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 5c-3.314 0-6 2.686-6 6h2c0-2.21 1.79-4 4-4s4 1.79 4 4h2c0-3.314-2.686-6-6-6zm-4 7v2h8v-2H6z"/>
+              </svg>
+            </div>
+            <span className="text-sm font-bold text-white">
+              Sebo<span className="text-cyan-500">tics</span>
+            </span>
+            <span className="text-zinc-700 ml-2 text-xs">
+              © {new Date().getFullYear()} Sebotics. Alle Rechte vorbehalten.
+            </span>
+          </div>
           <div className="flex gap-6">
-            <Link href="/impressum/" className="text-xs text-slate-500 hover:text-slate-300">
+            <Link href="/impressum/" className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors">
               Impressum
             </Link>
-            <Link href="/datenschutz/" className="text-xs text-slate-500 hover:text-slate-300">
+            <Link href="/datenschutz/" className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors">
               Datenschutz
             </Link>
           </div>

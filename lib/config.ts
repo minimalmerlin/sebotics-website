@@ -486,7 +486,7 @@ export const useCases: UseCase[] = [
 ];
 
 export const proofAssets = {
-  partners: ["Pudu Robotics"],
+  partners: [],
   references: ["Raiffeisen", "ASSA ABLOY", "Ovomaltine", "AWO", "Roche", "Schweizer Armee"],
   kpis: [
     { label: "Branchen bedient", value: "6+" },
