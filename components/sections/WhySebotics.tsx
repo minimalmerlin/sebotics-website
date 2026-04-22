@@ -40,8 +40,8 @@ export function WhySebotics() {
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-zinc-100">
               <Image
-                src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1000&q=80&auto=format&fit=crop"
-                alt="Moderne Robotik-Integration in der Praxis"
+                src="https://images.unsplash.com/photo-1611095970003-8c62b9f7c9df?w=1000&q=80&auto=format&fit=crop"
+                alt="Serviceroboter im praktischen Einsatz"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

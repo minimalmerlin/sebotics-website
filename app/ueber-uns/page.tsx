@@ -14,7 +14,7 @@ export default function UeberUnsPage() {
     <>
       <section className="py-16 md:py-20 bg-slate-950 text-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 max-w-3xl">
-          <p className="text-xs font-mono uppercase tracking-widest text-orange-400 mb-4">Über Sebotics</p>
+          <p className="text-xs font-mono uppercase tracking-widest text-brand-400 mb-4">Über Sebotics</p>
           <h1 className="text-4xl font-bold mb-4">{brand.role}</h1>
           <p className="text-xl text-slate-300">{brand.positioningStatement}</p>
         </div>

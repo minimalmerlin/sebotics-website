@@ -70,7 +70,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: #e4e4e7;
   --input: #e4e4e7;
-  --ring: #06b6d4;
+  --ring: #2f5aae;
   --radius: 0.5rem;
   --sidebar: #f9f9f9;
   --sidebar-foreground: #0a0a0f;
@@ -79,7 +79,7 @@
   --sidebar-accent: #f4f4f5;
   --sidebar-accent-foreground: #0a0a0f;
   --sidebar-border: #e4e4e7;
-  --sidebar-ring: #06b6d4;
+  --sidebar-ring: #2f5aae;
 
   /* Sebotics brand */
   --brand: #2f5aae;

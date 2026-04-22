@@ -14,7 +14,7 @@ export function buildMetadata({
 }): Metadata {
   const url = `${brand.website}${path}`;
   return {
-    title: `${title} | ${brand.name}`,
+    title,
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -24,6 +24,11 @@ export function buildMetadata({
       siteName: brand.name,
       locale: "de_DE",
       type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | ${brand.name}`,
+      description,
     },
     robots: noIndex ? { index: false, follow: false } : { index: true, follow: true },
   };

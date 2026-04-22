@@ -27,7 +27,7 @@ export default function RaasVsKaufPage() {
       <section className="bg-slate-950 py-16 md:py-20 text-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs font-mono uppercase tracking-widest text-orange-400 mb-4">Entscheidungshilfe</p>
+            <p className="text-xs font-mono uppercase tracking-widest text-brand-400 mb-4">Entscheidungshilfe</p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
               Kauf · Miete · RaaS — Was passt zu Ihnen?
             </h1>
@@ -47,7 +47,7 @@ export default function RaasVsKaufPage() {
                   <th className="text-left p-4 font-mono font-semibold text-slate-600 bg-slate-50">Kriterium</th>
                   <th className="text-left p-4 font-mono font-semibold text-slate-800 bg-slate-50">Kauf</th>
                   <th className="text-left p-4 font-mono font-semibold text-slate-800 bg-slate-50">Miete / Leasing</th>
-                  <th className="text-left p-4 font-mono font-semibold text-orange-700 bg-orange-50">RaaS</th>
+                  <th className="bg-brand-50 p-4 text-left font-mono font-semibold text-brand-700">RaaS</th>
                 </tr>
               </thead>
               <tbody>
@@ -56,7 +56,7 @@ export default function RaasVsKaufPage() {
                     <td className="p-4 font-medium text-slate-700 bg-slate-50/50">{row.criterion}</td>
                     <td className="p-4 text-slate-600">{row.kauf}</td>
                     <td className="p-4 text-slate-600">{row.miete}</td>
-                    <td className="p-4 text-orange-700 font-medium bg-orange-50/30">{row.raas}</td>
+                    <td className="bg-brand-50/30 p-4 font-medium text-brand-700">{row.raas}</td>
                   </tr>
                 ))}
               </tbody>
@@ -80,7 +80,7 @@ export default function RaasVsKaufPage() {
                 <li>→ Steuerliche Optimierung gewünscht</li>
               </ul>
             </div>
-            <div className="border border-orange-200 bg-orange-50 rounded-sm p-5">
+            <div className="rounded-sm border border-brand-200 bg-brand-50 p-5">
               <h3 className="font-bold text-slate-900 mb-2">RaaS empfehlen wir wenn</h3>
               <ul className="text-sm text-slate-600 space-y-1">
                 <li>→ Erst testen, dann skalieren</li>

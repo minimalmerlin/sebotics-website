@@ -13,7 +13,7 @@ export default function KonfiguratorPage() {
     <div className="py-16 md:py-20 bg-slate-50 min-h-screen">
       <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
         <div className="mb-10">
-          <p className="text-xs font-mono uppercase tracking-widest text-orange-500 mb-3">
+          <p className="text-xs font-mono uppercase tracking-widest text-brand-500 mb-3">
             Schritt 1 von 3
           </p>
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-3">

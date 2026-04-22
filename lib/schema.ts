@@ -7,8 +7,10 @@ export function organizationSchema() {
     "@type": "Organization",
     name: brand.name,
     url: brand.website,
+    logo: `${brand.website}/logo.webp`,
     description: brand.mission,
     areaServed: brand.regionFocus,
+    knowsAbout: brand.category.split(", "),
   };
 }
 
@@ -18,6 +20,7 @@ export function websiteSchema() {
     "@type": "WebSite",
     name: brand.name,
     url: brand.website,
+    inLanguage: brand.primaryLanguage,
   };
 }
 
@@ -51,8 +54,10 @@ export function serviceSchema(name: string, description: string, url: string) {
     "@context": "https://schema.org",
     "@type": "Service",
     name,
+    serviceType: name,
     description,
     provider: { "@type": "Organization", name: brand.name, url: brand.website },
+    areaServed: brand.regionFocus,
     url: `${brand.website}${url}`,
   };
 }

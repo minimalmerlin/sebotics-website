@@ -66,7 +66,7 @@ export function ConfiguratorCTA({ variant = "primary" }: ConfiguratorCTAProps) {
     <section className="relative overflow-hidden py-20 md:py-28 bg-[#030712]">
       <div className="absolute inset-0 opacity-10">
         <Image
-          src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1600&q=60&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1612815292278-a72dbbf89e50?w=1600&q=60&auto=format&fit=crop"
           alt=""
           fill
           className="object-cover"

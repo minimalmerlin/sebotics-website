@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, type FocusEvent } from "react";
 import { Menu, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
@@ -50,12 +50,24 @@ const nav = [
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(null);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 8);
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
+  function handleDesktopMenuBlur(event: FocusEvent<HTMLDivElement>) {
+    const nextTarget = event.relatedTarget;
+
+    // Why: Das Dropdown soll nur schließen, wenn der Fokus den gesamten Menü-Container verlässt.
+    if (nextTarget instanceof Node && event.currentTarget.contains(nextTarget)) {
+      return;
+    }
+
+    setOpenDesktopMenu(null);
+  }
 
   return (
     <header
@@ -82,24 +94,53 @@ export function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-0.5">
-            {nav.map((item) =>
-              item.children ? (
-                <div key={item.href} className="relative group">
-                  <button className="flex items-center gap-1 px-3.5 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 rounded-lg hover:bg-zinc-50 transition-colors">
+            {nav.map((item) => {
+              const isOpen = openDesktopMenu === item.href;
+              const submenuId = `desktop-submenu-${item.href.replaceAll("/", "-")}`;
+
+              return item.children ? (
+                <div
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={() => setOpenDesktopMenu(item.href)}
+                  onMouseLeave={() => setOpenDesktopMenu(null)}
+                  onFocusCapture={() => setOpenDesktopMenu(item.href)}
+                  onBlurCapture={handleDesktopMenuBlur}
+                >
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    aria-controls={submenuId}
+                    onClick={() => setOpenDesktopMenu(isOpen ? null : item.href)}
+                    className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-50 hover:text-zinc-900"
+                  >
                     {item.label}
-                    <ChevronDown className="size-3.5 text-zinc-400 transition-transform duration-200 group-hover:rotate-180" />
+                    <ChevronDown
+                      className={cn(
+                        "size-3.5 text-zinc-400 transition-transform duration-200",
+                        isOpen && "rotate-180"
+                      )}
+                    />
                   </button>
-                  <div className="absolute top-full left-0 mt-1.5 w-64 rounded-xl border border-zinc-200 bg-white shadow-xl shadow-zinc-100/80 py-2 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-150 translate-y-1 group-hover:translate-y-0">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href={child.href}
-                        className="flex flex-col px-4 py-2.5 hover:bg-zinc-50 transition-colors"
-                      >
-                        <span className="text-sm font-medium text-zinc-900">{child.label}</span>
-                        <span className="text-xs text-zinc-500 mt-0.5">{child.desc}</span>
-                      </Link>
-                    ))}
+                  <div className="absolute left-0 top-full pt-2">
+                    <div
+                      id={submenuId}
+                      className={cn(
+                        "w-64 rounded-xl border border-zinc-200 bg-white py-2 shadow-xl shadow-zinc-100/80 transition-all duration-150",
+                        isOpen ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-1 opacity-0"
+                      )}
+                    >
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          className="flex flex-col px-4 py-2.5 transition-colors hover:bg-zinc-50"
+                        >
+                          <span className="text-sm font-medium text-zinc-900">{child.label}</span>
+                          <span className="mt-0.5 text-xs text-zinc-500">{child.desc}</span>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ) : (
@@ -111,7 +152,7 @@ export function Header() {
                   {item.label}
                 </Link>
               )
-            )}
+            })}
           </nav>
 
           {/* Desktop CTAs */}

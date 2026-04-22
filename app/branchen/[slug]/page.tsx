@@ -7,6 +7,7 @@ import { buildMetadata } from "@/lib/seo";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { ConfiguratorCTA } from "@/components/sections/ConfiguratorCTA";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
+import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -56,16 +57,17 @@ export default async function BranchenSlugPage({ params }: Props) {
       <section className="bg-slate-950 py-16 md:py-20 text-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
-          <nav className="flex gap-2 text-sm text-slate-500 mb-8">
-            <Link href="/" className="hover:text-slate-300">Startseite</Link>
-            <span>/</span>
-            <Link href="/branchen/" className="hover:text-slate-300">Branchen</Link>
-            <span>/</span>
-            <span className="text-slate-300">{industry.title}</span>
-          </nav>
+          <Breadcrumbs
+            dark
+            items={[
+              { label: "Startseite", href: "/" },
+              { label: "Branchen", href: "/branchen/" },
+              { label: industry.title },
+            ]}
+          />
 
           <div className="max-w-3xl">
-            <p className="text-xs font-mono uppercase tracking-widest text-orange-400 mb-4">
+            <p className="text-xs font-mono uppercase tracking-widest text-brand-400 mb-4">
               Branchenlösung
             </p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-4">
@@ -75,7 +77,7 @@ export default async function BranchenSlugPage({ params }: Props) {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={industry.primaryCtaHref}
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-orange-500 hover:bg-orange-600 px-6 py-3 text-base font-medium text-white transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-500 px-6 py-3 text-base font-medium text-white transition-colors hover:bg-brand-600"
               >
                 {industry.primaryCta} <ArrowRight className="size-4" />
               </Link>
@@ -135,13 +137,13 @@ export default async function BranchenSlugPage({ params }: Props) {
               <Link
                 key={sol.slug}
                 href={`/loesungen/${sol.slug}/`}
-                className="group border border-slate-200 bg-white rounded-sm p-5 hover:border-orange-300 hover:shadow-sm transition-all"
+                className="group rounded-sm border border-slate-200 bg-white p-5 transition-all hover:border-brand-300 hover:shadow-sm"
               >
-                <h3 className="font-bold text-slate-900 group-hover:text-orange-600 mb-2">
+                <h3 className="mb-2 font-bold text-slate-900 group-hover:text-brand-600">
                   {sol.title}
                 </h3>
                 <p className="text-sm text-slate-500 mb-3 line-clamp-2">{sol.summary}</p>
-                <div className="text-sm font-medium text-orange-500 flex items-center gap-1 group-hover:gap-2 transition-all">
+                <div className="flex items-center gap-1 text-sm font-medium text-brand-500 transition-all group-hover:gap-2">
                   Mehr erfahren <ArrowRight className="size-3.5" />
                 </div>
               </Link>

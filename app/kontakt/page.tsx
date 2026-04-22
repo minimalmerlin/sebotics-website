@@ -15,7 +15,7 @@ export default function KontaktPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Info */}
           <div>
-            <p className="text-xs font-mono uppercase tracking-widest text-orange-500 mb-3">Kontakt</p>
+            <p className="text-xs font-mono uppercase tracking-widest text-brand-500 mb-3">Kontakt</p>
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 mb-4">
               Demo anfragen oder Beratung buchen
             </h1>
@@ -28,7 +28,7 @@ export default function KontaktPage() {
                 <h3 className="font-semibold text-slate-900 mb-1">Kostenfreier Konfigurator</h3>
                 <p className="text-sm text-slate-600">
                   Noch nicht bereit für ein Gespräch?{" "}
-                  <a href="/konfigurator/" className="text-orange-600 hover:underline">
+                  <a href="/konfigurator/" className="text-brand-600 hover:underline">
                     Starten Sie mit dem Konfigurator
                   </a>{" "}
                   und erhalten Sie eine erste Empfehlung sofort.
@@ -38,7 +38,7 @@ export default function KontaktPage() {
                 <h3 className="font-semibold text-slate-900 mb-1">Pilotprojekt</h3>
                 <p className="text-sm text-slate-600">
                   Sie wollen erst testen?{" "}
-                  <a href="/pilotprojekt/" className="text-orange-600 hover:underline">
+                  <a href="/pilotprojekt/" className="text-brand-600 hover:underline">
                     Unser Pilotprojekt-Angebot
                   </a>{" "}
                   ermöglicht einen strukturierten 30–90-Tage-Test mit klaren Erfolgskriterien.

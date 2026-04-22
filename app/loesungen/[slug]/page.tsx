@@ -6,6 +6,7 @@ import { solutions, industries } from "@/lib/config";
 import { buildMetadata } from "@/lib/seo";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 import { ConfiguratorCTA } from "@/components/sections/ConfiguratorCTA";
+import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -62,16 +63,17 @@ export default async function LoesungSlugPage({ params }: Props) {
       {/* Hero */}
       <section className="bg-slate-950 py-16 md:py-20 text-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <nav className="flex gap-2 text-sm text-slate-500 mb-8">
-            <Link href="/" className="hover:text-slate-300">Startseite</Link>
-            <span>/</span>
-            <Link href="/loesungen/" className="hover:text-slate-300">Lösungen</Link>
-            <span>/</span>
-            <span className="text-slate-300">{solution.title}</span>
-          </nav>
+          <Breadcrumbs
+            dark
+            items={[
+              { label: "Startseite", href: "/" },
+              { label: "Lösungen", href: "/loesungen/" },
+              { label: solution.title },
+            ]}
+          />
 
           <div className="max-w-3xl">
-            <p className="text-xs font-mono uppercase tracking-widest text-orange-400 mb-4">
+            <p className="text-xs font-mono uppercase tracking-widest text-brand-400 mb-4">
               Robotertyp
             </p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
@@ -79,14 +81,14 @@ export default async function LoesungSlugPage({ params }: Props) {
             </h1>
 
             {/* AEO Direktantwort */}
-            <div className="border-l-2 border-orange-500 pl-5 mb-8">
+            <div className="mb-8 border-l-2 border-brand-500 pl-5">
               <p className="text-slate-300 leading-relaxed">{solution.directAnswer}</p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/konfigurator/"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-orange-500 hover:bg-orange-600 px-6 py-3 text-base font-medium text-white transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-500 px-6 py-3 text-base font-medium text-white transition-colors hover:bg-brand-600"
               >
                 Konfigurieren <ArrowRight className="size-4" />
               </Link>
@@ -142,7 +144,7 @@ export default async function LoesungSlugPage({ params }: Props) {
               <ul className="space-y-2 text-sm text-slate-600">
                 {solution.typicalTasks.map((task) => (
                   <li key={task} className="flex gap-2">
-                    <span className="text-orange-500 shrink-0">→</span>
+                    <span className="shrink-0 text-brand-500">→</span>
                     {task}
                   </li>
                 ))}
@@ -230,7 +232,7 @@ export default async function LoesungSlugPage({ params }: Props) {
                 <Link
                   key={ind.slug}
                   href={`/branchen/${ind.slug}/`}
-                  className="rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm text-slate-700 hover:border-orange-300 hover:text-orange-600 transition-colors"
+                  className="rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm text-slate-700 transition-colors hover:border-brand-300 hover:text-brand-600"
                 >
                   {ind.title.replace("Robotik für ", "")}
                 </Link>

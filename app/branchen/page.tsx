@@ -25,7 +25,7 @@ export default function BranchenPage() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-12">
-          <p className="text-xs font-mono uppercase tracking-widest text-orange-500 mb-3">Branchen</p>
+          <p className="text-xs font-mono uppercase tracking-widest text-brand-500 mb-3">Branchen</p>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
             Robotik für Ihre Branche
           </h1>
@@ -40,10 +40,10 @@ export default function BranchenPage() {
             <Link
               key={industry.slug}
               href={`/branchen/${industry.slug}/`}
-              className="group flex flex-col h-full border border-slate-200 bg-white rounded-sm p-6 hover:border-orange-300 hover:shadow-sm transition-all duration-150"
+              className="group flex flex-col h-full rounded-sm border border-slate-200 bg-white p-6 transition-all duration-150 hover:border-brand-300 hover:shadow-sm"
             >
               <div className="text-3xl mb-4">{industryIcons[industry.slug] ?? "🤖"}</div>
-              <h2 className="text-lg font-bold text-slate-900 group-hover:text-orange-600 transition-colors mb-3">
+              <h2 className="mb-3 text-lg font-bold text-slate-900 transition-colors group-hover:text-brand-600">
                 {industry.title}
               </h2>
               <p className="text-sm text-slate-500 mb-4 flex-1">{industry.subline}</p>
@@ -55,7 +55,7 @@ export default function BranchenPage() {
                   </div>
                 ))}
               </div>
-              <div className="flex items-center gap-1 text-sm font-medium text-orange-500 group-hover:gap-2 transition-all">
+              <div className="flex items-center gap-1 text-sm font-medium text-brand-500 transition-all group-hover:gap-2">
                 Branchenlösung ansehen <ArrowRight className="size-3.5" />
               </div>
             </Link>

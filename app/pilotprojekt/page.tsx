@@ -65,20 +65,20 @@ export default function PilotprojektPage() {
       <section className="bg-slate-950 py-16 md:py-20 text-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs font-mono uppercase tracking-widest text-orange-400 mb-4">
+            <p className="text-xs font-mono uppercase tracking-widest text-brand-400 mb-4">
               Risikominimiert einsteigen
             </p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
               Pilotprojekt Robotik
             </h1>
-            <div className="border-l-2 border-orange-500 pl-5 mb-8">
+            <div className="mb-8 border-l-2 border-brand-500 pl-5">
               <p className="text-slate-300 leading-relaxed">
                 Ein Pilotprojekt ist der strukturierte Weg, Robotik in Ihrem Betrieb zu testen — mit klaren Erfolgskriterien, definiertem Ablauf und einer ehrlichen Auswertung. Kein Blindkauf, sondern fundierte Entscheidung.
               </p>
             </div>
             <Link
               href="/kontakt/"
-              className="inline-flex items-center gap-2 rounded-md bg-orange-500 hover:bg-orange-600 px-6 py-3 text-base font-medium text-white transition-colors"
+              className="inline-flex items-center gap-2 rounded-md bg-brand-500 px-6 py-3 text-base font-medium text-white transition-colors hover:bg-brand-600"
             >
               Pilot anfragen <ArrowRight className="size-4" />
             </Link>
@@ -94,8 +94,8 @@ export default function PilotprojektPage() {
             {pilotPhasen.map((phase, i) => (
               <div key={phase.titel} className="border border-slate-200 rounded-sm p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex size-8 items-center justify-center rounded-sm border border-orange-500/30 bg-orange-500/10">
-                    <span className="font-mono text-sm font-bold text-orange-500">{`0${i + 1}`}</span>
+                  <div className="flex size-8 items-center justify-center rounded-sm border border-brand-500/30 bg-brand-500/10">
+                    <span className="font-mono text-sm font-bold text-brand-500">{`0${i + 1}`}</span>
                   </div>
                   <span className="text-xs font-mono text-slate-500">{phase.dauer}</span>
                 </div>
@@ -103,7 +103,7 @@ export default function PilotprojektPage() {
                 <ul className="space-y-2">
                   {phase.punkte.map((punkt) => (
                     <li key={punkt} className="flex gap-2 text-sm text-slate-600">
-                      <span className="text-orange-500 shrink-0">→</span>
+                      <span className="shrink-0 text-brand-500">→</span>
                       {punkt}
                     </li>
                   ))}

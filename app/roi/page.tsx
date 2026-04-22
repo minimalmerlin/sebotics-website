@@ -50,20 +50,20 @@ export default function ROIPage() {
       <section className="bg-slate-950 py-16 md:py-20 text-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs font-mono uppercase tracking-widest text-orange-400 mb-4">
+            <p className="text-xs font-mono uppercase tracking-widest text-brand-400 mb-4">
               Wirtschaftlichkeit
             </p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
               Wann lohnt sich Robotik für Ihren Betrieb?
             </h1>
-            <div className="border-l-2 border-orange-500 pl-5 mb-8">
+            <div className="mb-8 border-l-2 border-brand-500 pl-5">
               <p className="text-slate-300 leading-relaxed">
                 Robotik lohnt sich, wenn klare, wiederholbare Aufgaben häufig genug anfallen und die Umgebung standardisierbar ist. Für die meisten Branchen liegt der ROI zwischen 12 und 36 Monaten — abhängig von Aufgabentyp, Modell und Kostenmodell.
               </p>
             </div>
             <Link
               href="/konfigurator/"
-              className="inline-flex items-center gap-2 rounded-md bg-orange-500 hover:bg-orange-600 px-6 py-3 text-base font-medium text-white transition-colors"
+              className="inline-flex items-center gap-2 rounded-md bg-brand-500 px-6 py-3 text-base font-medium text-white transition-colors hover:bg-brand-600"
             >
               ROI für meinen Betrieb schätzen →
             </Link>
@@ -82,7 +82,7 @@ export default function ROIPage() {
                 <ul className="space-y-2">
                   {block.items.map((item) => (
                     <li key={item} className="flex gap-2 text-sm text-slate-600">
-                      <span className="text-orange-500 shrink-0">→</span>
+                      <span className="shrink-0 text-brand-500">→</span>
                       {item}
                     </li>
                   ))}
@@ -104,7 +104,7 @@ export default function ROIPage() {
                   <th className="text-left p-4 font-mono font-semibold text-slate-700">Kriterium</th>
                   <th className="text-left p-4 font-mono font-semibold text-slate-700">Kauf</th>
                   <th className="text-left p-4 font-mono font-semibold text-slate-700">Miete</th>
-                  <th className="text-left p-4 font-mono font-semibold text-orange-600">RaaS</th>
+                  <th className="p-4 text-left font-mono font-semibold text-brand-600">RaaS</th>
                 </tr>
               </thead>
               <tbody>
@@ -118,7 +118,7 @@ export default function ROIPage() {
                   <tr key={criterion} className="border-b border-slate-100">
                     <td className="p-4 font-medium text-slate-700">{criterion}</td>
                     {values.map((val, i) => (
-                      <td key={i} className={`p-4 text-slate-600 ${i === 2 ? "text-orange-600 font-medium" : ""}`}>{val}</td>
+                      <td key={i} className={`p-4 text-slate-600 ${i === 2 ? "font-medium text-brand-600" : ""}`}>{val}</td>
                     ))}
                   </tr>
                 ))}
@@ -128,7 +128,7 @@ export default function ROIPage() {
           <div className="mt-4">
             <Link
               href="/raas-vs-kauf/"
-              className="text-sm text-orange-600 hover:underline"
+              className="text-sm text-brand-600 hover:underline"
             >
               Vollständiger Vergleich: Kauf vs. Miete vs. RaaS →
             </Link>

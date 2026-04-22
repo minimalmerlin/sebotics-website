@@ -63,7 +63,7 @@ export default function RaaSPage() {
       <section className="bg-slate-950 py-16 md:py-20 text-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs font-mono uppercase tracking-widest text-orange-400 mb-4">
+            <p className="text-xs font-mono uppercase tracking-widest text-brand-400 mb-4">
               Kostenmodell
             </p>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-6">
@@ -71,7 +71,7 @@ export default function RaaSPage() {
             </h1>
 
             {/* Direktantwort */}
-            <div className="border-l-2 border-orange-500 pl-5 mb-8">
+            <div className="mb-8 border-l-2 border-brand-500 pl-5">
               <p className="text-slate-300 leading-relaxed">
                 {raasSolution?.directAnswer}
               </p>
@@ -80,7 +80,7 @@ export default function RaaSPage() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/konfigurator/"
-                className="inline-flex items-center justify-center gap-2 rounded-md bg-orange-500 hover:bg-orange-600 px-6 py-3 text-base font-medium text-white transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-brand-500 px-6 py-3 text-base font-medium text-white transition-colors hover:bg-brand-600"
               >
                 RaaS-Konfigurator <ArrowRight className="size-4" />
               </Link>
@@ -110,7 +110,7 @@ export default function RaaSPage() {
                 key={component}
                 className="flex items-start gap-3 border border-slate-200 rounded-sm p-4"
               >
-                <CheckCircle2 className="size-5 text-orange-500 shrink-0 mt-0.5" />
+                <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-brand-500" />
                 <span className="text-sm text-slate-700">{component}</span>
               </div>
             ))}

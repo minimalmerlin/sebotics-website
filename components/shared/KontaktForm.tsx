@@ -39,7 +39,7 @@ export function KontaktForm() {
             name="name"
             type="text"
             required
-            className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+            className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
             placeholder="Ihr Name"
           />
         </div>
@@ -52,7 +52,7 @@ export function KontaktForm() {
             name="company"
             type="text"
             required
-            className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+            className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
             placeholder="Firmenname"
           />
         </div>
@@ -67,7 +67,7 @@ export function KontaktForm() {
           name="email"
           type="email"
           required
-          className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+          className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
           placeholder="name@unternehmen.de"
         />
       </div>
@@ -79,7 +79,7 @@ export function KontaktForm() {
         <select
           id="branche"
           name="branche"
-          className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+          className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
         >
           <option value="">Bitte wählen</option>
           {industries.map((ind) => (
@@ -98,7 +98,7 @@ export function KontaktForm() {
         <select
           id="interesse"
           name="interesse"
-          className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20"
+          className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
         >
           <option value="">Bitte wählen</option>
           <option value="serviceroboter">Serviceroboter</option>
@@ -119,7 +119,7 @@ export function KontaktForm() {
           id="nachricht"
           name="nachricht"
           rows={4}
-          className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500/20 resize-none"
+          className="w-full rounded-md resize-none border border-slate-300 px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
           placeholder="Beschreiben Sie kurz Ihren Use Case, Ihre Fläche oder Ihr Team-Setup..."
         />
       </div>
@@ -127,7 +127,7 @@ export function KontaktForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-md bg-orange-500 hover:bg-orange-600 disabled:opacity-60 px-5 py-3 text-sm font-medium text-white transition-colors"
+        className="w-full rounded-md bg-brand-500 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-brand-600 disabled:opacity-60"
       >
         {loading ? "Wird gesendet…" : "Demo anfragen"}
       </button>

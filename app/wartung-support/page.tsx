@@ -6,6 +6,7 @@ export const metadata: Metadata = buildMetadata({
   title: "Wartung & Support für Roboter",
   description: "Wartung, Monitoring und Support für Robotersysteme von Sebotics. SLA mit definierten Reaktionszeiten, Remote-Monitoring und Vor-Ort-Service.",
   path: "/wartung-support/",
+  noIndex: true,
 });
 
 export default function WartungSupportPage() {
@@ -13,7 +14,7 @@ export default function WartungSupportPage() {
     <>
       <section className="bg-slate-950 py-16 text-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 max-w-3xl">
-          <p className="text-xs font-mono uppercase tracking-widest text-orange-400 mb-4">Support</p>
+          <p className="text-xs font-mono uppercase tracking-widest text-brand-400 mb-4">Support</p>
           <h1 className="text-4xl font-bold mb-4">Wartung & Support</h1>
           <p className="text-xl text-slate-300">Zuverlässiger Betrieb durch proaktives Monitoring, schnelle Reaktion und klare SLAs.</p>
         </div>

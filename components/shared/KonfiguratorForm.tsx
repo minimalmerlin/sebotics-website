@@ -58,8 +58,8 @@ export function KonfiguratorForm() {
               <button
                 key={ind.slug}
                 onClick={() => { setForm({ ...form, branche: ind.slug }); setStep(2); }}
-                className={`text-left border rounded-sm p-4 text-sm transition-all hover:border-orange-300 ${
-                  form.branche === ind.slug ? "border-orange-500 bg-orange-50" : "border-slate-200"
+                className={`text-left border rounded-sm p-4 text-sm transition-all hover:border-brand-300 ${
+                  form.branche === ind.slug ? "border-brand-500 bg-brand-50" : "border-slate-200"
                 }`}
               >
                 <div className="font-medium text-slate-900">{ind.title.replace("Robotik für ", "")}</div>
@@ -80,8 +80,8 @@ export function KonfiguratorForm() {
               <button
                 key={uc.value}
                 onClick={() => { setForm({ ...form, useCase: uc.value }); setStep(3); }}
-                className={`w-full text-left border rounded-sm p-4 text-sm transition-all hover:border-orange-300 ${
-                  form.useCase === uc.value ? "border-orange-500 bg-orange-50" : "border-slate-200"
+                className={`w-full text-left border rounded-sm p-4 text-sm transition-all hover:border-brand-300 ${
+                  form.useCase === uc.value ? "border-brand-500 bg-brand-50" : "border-slate-200"
                 }`}
               >
                 <span className="font-medium text-slate-900">{uc.label}</span>
@@ -101,8 +101,8 @@ export function KonfiguratorForm() {
               <button
                 key={mo.value}
                 onClick={() => { setForm({ ...form, modell: mo.value }); setStep("result"); }}
-                className={`w-full text-left border rounded-sm p-4 text-sm transition-all hover:border-orange-300 ${
-                  form.modell === mo.value ? "border-orange-500 bg-orange-50" : "border-slate-200"
+                className={`w-full text-left border rounded-sm p-4 text-sm transition-all hover:border-brand-300 ${
+                  form.modell === mo.value ? "border-brand-500 bg-brand-50" : "border-slate-200"
                 }`}
               >
                 <span className="font-medium text-slate-900">{mo.label}</span>
@@ -125,7 +125,7 @@ export function KonfiguratorForm() {
           <div className="space-y-3">
             <Link
               href={`/loesungen/${recommendation.slug}/`}
-              className="flex items-center justify-between w-full rounded-md bg-orange-500 hover:bg-orange-600 px-5 py-3 text-sm font-medium text-white transition-colors"
+              className="flex w-full items-center justify-between rounded-md bg-brand-500 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-brand-600"
             >
               <span>{recommendation.solution} — Details ansehen</span>
               <ArrowRight className="size-4" />
