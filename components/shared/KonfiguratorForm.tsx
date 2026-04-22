@@ -48,22 +48,22 @@ export function KonfiguratorForm() {
   const recommendation = step === "result" ? getRecommendation(form) : null;
 
   return (
-    <div className="bg-white border border-slate-200 rounded-sm p-8">
+    <div className="rounded-sm border border-zinc-800 bg-[#0b1220] p-8">
       {step === 1 && (
         <div>
-          <h2 className="text-lg font-bold text-slate-900 mb-2">In welcher Branche sind Sie tätig?</h2>
-          <p className="text-sm text-slate-500 mb-6">Wählen Sie Ihre Branche für branchenspezifische Empfehlungen.</p>
+          <h2 className="mb-2 text-lg font-bold text-white">In welcher Branche sind Sie tätig?</h2>
+          <p className="mb-6 text-sm text-zinc-400">Wählen Sie Ihre Branche für branchenspezifische Empfehlungen.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {industries.map((ind) => (
               <button
                 key={ind.slug}
                 onClick={() => { setForm({ ...form, branche: ind.slug }); setStep(2); }}
                 className={`text-left border rounded-sm p-4 text-sm transition-all hover:border-brand-300 ${
-                  form.branche === ind.slug ? "border-brand-500 bg-brand-50" : "border-slate-200"
+                  form.branche === ind.slug ? "border-brand-500 bg-brand-900/30" : "border-zinc-800 bg-slate-950/60"
                 }`}
               >
-                <div className="font-medium text-slate-900">{ind.title.replace("Robotik für ", "")}</div>
-                <div className="text-slate-500 text-xs mt-1 line-clamp-1">{ind.pains[0]}</div>
+                <div className="font-medium text-white">{ind.title.replace("Robotik für ", "")}</div>
+                <div className="mt-1 line-clamp-1 text-xs text-zinc-500">{ind.pains[0]}</div>
               </button>
             ))}
           </div>
@@ -72,19 +72,19 @@ export function KonfiguratorForm() {
 
       {step === 2 && (
         <div>
-          <button onClick={() => setStep(1)} className="text-sm text-slate-500 mb-4 hover:text-slate-700">← Zurück</button>
-          <h2 className="text-lg font-bold text-slate-900 mb-2">Welche Aufgabe soll der Roboter übernehmen?</h2>
-          <p className="text-sm text-slate-500 mb-6">Wählen Sie den primären Use Case.</p>
+          <button onClick={() => setStep(1)} className="mb-4 text-sm text-zinc-500 hover:text-zinc-300">← Zurück</button>
+          <h2 className="mb-2 text-lg font-bold text-white">Welche Aufgabe soll der Roboter übernehmen?</h2>
+          <p className="mb-6 text-sm text-zinc-400">Wählen Sie den primären Use Case.</p>
           <div className="space-y-3">
             {useCaseOptions.map((uc) => (
               <button
                 key={uc.value}
                 onClick={() => { setForm({ ...form, useCase: uc.value }); setStep(3); }}
                 className={`w-full text-left border rounded-sm p-4 text-sm transition-all hover:border-brand-300 ${
-                  form.useCase === uc.value ? "border-brand-500 bg-brand-50" : "border-slate-200"
+                  form.useCase === uc.value ? "border-brand-500 bg-brand-900/30" : "border-zinc-800 bg-slate-950/60"
                 }`}
               >
-                <span className="font-medium text-slate-900">{uc.label}</span>
+                <span className="font-medium text-white">{uc.label}</span>
               </button>
             ))}
           </div>
@@ -93,19 +93,19 @@ export function KonfiguratorForm() {
 
       {step === 3 && (
         <div>
-          <button onClick={() => setStep(2)} className="text-sm text-slate-500 mb-4 hover:text-slate-700">← Zurück</button>
-          <h2 className="text-lg font-bold text-slate-900 mb-2">Welches Kostenmodell bevorzugen Sie?</h2>
-          <p className="text-sm text-slate-500 mb-6">Kauf, Miete oder RaaS — oder lassen Sie sich beraten.</p>
+          <button onClick={() => setStep(2)} className="mb-4 text-sm text-zinc-500 hover:text-zinc-300">← Zurück</button>
+          <h2 className="mb-2 text-lg font-bold text-white">Welches Kostenmodell bevorzugen Sie?</h2>
+          <p className="mb-6 text-sm text-zinc-400">Kauf, Miete oder RaaS — oder lassen Sie sich beraten.</p>
           <div className="space-y-3">
             {modellOptions.map((mo) => (
               <button
                 key={mo.value}
                 onClick={() => { setForm({ ...form, modell: mo.value }); setStep("result"); }}
                 className={`w-full text-left border rounded-sm p-4 text-sm transition-all hover:border-brand-300 ${
-                  form.modell === mo.value ? "border-brand-500 bg-brand-50" : "border-slate-200"
+                  form.modell === mo.value ? "border-brand-500 bg-brand-900/30" : "border-zinc-800 bg-slate-950/60"
                 }`}
               >
-                <span className="font-medium text-slate-900">{mo.label}</span>
+                <span className="font-medium text-white">{mo.label}</span>
               </button>
             ))}
           </div>
@@ -114,12 +114,12 @@ export function KonfiguratorForm() {
 
       {step === "result" && recommendation && (
         <div>
-          <div className="mb-6 pb-6 border-b border-slate-100">
+          <div className="mb-6 border-b border-zinc-800 pb-6">
             <div className="inline-block rounded-sm border border-green-200 bg-green-50 px-3 py-1 text-xs font-mono font-semibold text-green-700 mb-4">
               Empfehlung
             </div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-2">{recommendation.solution}</h2>
-            <p className="text-slate-600 leading-relaxed">{recommendation.reason}</p>
+            <h2 className="mb-2 text-2xl font-bold text-white">{recommendation.solution}</h2>
+            <p className="leading-relaxed text-zinc-300">{recommendation.reason}</p>
           </div>
 
           <div className="space-y-3">
@@ -132,14 +132,14 @@ export function KonfiguratorForm() {
             </Link>
             <Link
               href="/kontakt/"
-              className="flex items-center justify-between w-full rounded-md border border-slate-300 hover:bg-slate-50 px-5 py-3 text-sm font-medium text-slate-700 transition-colors"
+              className="flex w-full items-center justify-between rounded-md border border-zinc-700 px-5 py-3 text-sm font-medium text-zinc-200 transition-colors hover:bg-white/5"
             >
               <span>Demo anfragen oder Beratung buchen</span>
               <ArrowRight className="size-4" />
             </Link>
             <Link
               href="/pilotprojekt/"
-              className="flex items-center justify-between w-full rounded-md border border-slate-300 hover:bg-slate-50 px-5 py-3 text-sm font-medium text-slate-700 transition-colors"
+              className="flex w-full items-center justify-between rounded-md border border-zinc-700 px-5 py-3 text-sm font-medium text-zinc-200 transition-colors hover:bg-white/5"
             >
               <span>Pilotprojekt besprechen</span>
               <ArrowRight className="size-4" />
@@ -148,7 +148,7 @@ export function KonfiguratorForm() {
 
           <button
             onClick={() => { setForm({ branche: "", useCase: "", modell: "" }); setStep(1); }}
-            className="mt-4 text-sm text-slate-400 hover:text-slate-600"
+            className="mt-4 text-sm text-zinc-500 hover:text-zinc-300"
           >
             Neu starten
           </button>

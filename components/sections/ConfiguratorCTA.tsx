@@ -13,7 +13,7 @@ interface ConfiguratorCTAProps {
 export function ConfiguratorCTA({ variant = "primary" }: ConfiguratorCTAProps) {
   if (variant === "split") {
     return (
-      <section className="py-16 bg-white border-t border-zinc-100">
+      <section className="border-t border-zinc-900 bg-slate-950 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Link
@@ -43,16 +43,16 @@ export function ConfiguratorCTA({ variant = "primary" }: ConfiguratorCTAProps) {
 
             <Link
               href="/kontakt/"
-              className="group flex flex-col justify-between rounded-2xl border border-zinc-200 bg-white p-8 hover:border-zinc-300 hover:shadow-xl hover:shadow-zinc-100 transition-all duration-300"
+              className="group flex flex-col justify-between rounded-2xl border border-zinc-800 bg-[#0b1220] p-8 transition-all duration-300 hover:border-zinc-700 hover:shadow-xl hover:shadow-black/20"
             >
               <div>
-                <MessageSquare className="size-8 text-zinc-400 mb-6" />
-                <h3 className="text-xl font-bold text-zinc-900 mb-2">Demo oder Beratung</h3>
-                <p className="text-zinc-500 text-sm leading-relaxed">
+                <MessageSquare className="mb-6 size-8 text-zinc-500" />
+                <h3 className="mb-2 text-xl font-bold text-white">Demo oder Beratung</h3>
+                <p className="text-sm leading-relaxed text-zinc-400">
                   Lieber direkt sprechen? Wir zeigen Ihnen die passende Lösung live und beantworten Ihre konkreten Fragen.
                 </p>
               </div>
-              <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-zinc-700 group-hover:gap-3 transition-all">
+              <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-zinc-200 transition-all group-hover:gap-3">
                 Demo anfragen <ArrowRight className="size-4" />
               </div>
             </Link>
@@ -66,7 +66,7 @@ export function ConfiguratorCTA({ variant = "primary" }: ConfiguratorCTAProps) {
     <section className="relative overflow-hidden py-20 md:py-28 bg-[#030712]">
       <div className="absolute inset-0 opacity-10">
         <Image
-          src="https://images.unsplash.com/photo-1612815292278-a72dbbf89e50?w=1600&q=60&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1600&q=60&auto=format&fit=crop"
           alt=""
           fill
           className="object-cover"

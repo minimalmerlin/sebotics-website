@@ -17,10 +17,10 @@ export function KontaktForm() {
 
   if (submitted) {
     return (
-      <div className="border border-green-200 bg-green-50 rounded-sm p-8 text-center">
+      <div className="rounded-sm border border-green-500/30 bg-green-500/10 p-8 text-center">
         <div className="text-3xl mb-4">✓</div>
-        <h3 className="text-xl font-bold text-slate-900 mb-2">Anfrage eingegangen</h3>
-        <p className="text-slate-600 text-sm leading-relaxed">
+        <h3 className="mb-2 text-xl font-bold text-white">Anfrage eingegangen</h3>
+        <p className="text-sm leading-relaxed text-zinc-300">
           Vielen Dank! Wir melden uns innerhalb von 24 Stunden an Werktagen mit einer konkreten Einschätzung.
         </p>
       </div>
@@ -31,7 +31,7 @@ export function KontaktForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1" htmlFor="name">
+          <label className="mb-1 block text-sm font-medium text-zinc-200" htmlFor="name">
             Name *
           </label>
           <input
@@ -39,12 +39,12 @@ export function KontaktForm() {
             name="name"
             type="text"
             required
-            className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+            className="w-full rounded-md border border-zinc-700 bg-slate-950 px-3 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
             placeholder="Ihr Name"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-700 mb-1" htmlFor="company">
+          <label className="mb-1 block text-sm font-medium text-zinc-200" htmlFor="company">
             Unternehmen *
           </label>
           <input
@@ -52,14 +52,14 @@ export function KontaktForm() {
             name="company"
             type="text"
             required
-            className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+            className="w-full rounded-md border border-zinc-700 bg-slate-950 px-3 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
             placeholder="Firmenname"
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-slate-700 mb-1" htmlFor="email">
+        <label className="mb-1 block text-sm font-medium text-zinc-200" htmlFor="email">
           E-Mail *
         </label>
         <input
@@ -67,19 +67,19 @@ export function KontaktForm() {
           name="email"
           type="email"
           required
-          className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+          className="w-full rounded-md border border-zinc-700 bg-slate-950 px-3 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
           placeholder="name@unternehmen.de"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-slate-700 mb-1" htmlFor="branche">
+        <label className="mb-1 block text-sm font-medium text-zinc-200" htmlFor="branche">
           Branche
         </label>
         <select
           id="branche"
           name="branche"
-          className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+          className="w-full rounded-md border border-zinc-700 bg-slate-950 px-3 py-2.5 text-sm text-white focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
         >
           <option value="">Bitte wählen</option>
           {industries.map((ind) => (
@@ -92,13 +92,13 @@ export function KontaktForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-slate-700 mb-1" htmlFor="interesse">
+        <label className="mb-1 block text-sm font-medium text-zinc-200" htmlFor="interesse">
           Robotikinteresse
         </label>
         <select
           id="interesse"
           name="interesse"
-          className="w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+          className="w-full rounded-md border border-zinc-700 bg-slate-950 px-3 py-2.5 text-sm text-white focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
         >
           <option value="">Bitte wählen</option>
           <option value="serviceroboter">Serviceroboter</option>
@@ -112,14 +112,14 @@ export function KontaktForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-slate-700 mb-1" htmlFor="nachricht">
+        <label className="mb-1 block text-sm font-medium text-zinc-200" htmlFor="nachricht">
           Ihre Situation / Fragen
         </label>
         <textarea
           id="nachricht"
           name="nachricht"
           rows={4}
-          className="w-full rounded-md resize-none border border-slate-300 px-3 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+          className="w-full resize-none rounded-md border border-zinc-700 bg-slate-950 px-3 py-2.5 text-sm text-white placeholder:text-zinc-500 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
           placeholder="Beschreiben Sie kurz Ihren Use Case, Ihre Fläche oder Ihr Team-Setup..."
         />
       </div>
@@ -132,7 +132,7 @@ export function KontaktForm() {
         {loading ? "Wird gesendet…" : "Demo anfragen"}
       </button>
 
-      <p className="text-xs text-slate-400 text-center">
+      <p className="text-center text-xs text-zinc-500">
         Keine unverlangte Werbung. Antwort innerhalb von 24 Stunden an Werktagen.
       </p>
     </form>

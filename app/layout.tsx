@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, JetBrains_Mono } from "next/font/google";
+import { DM_Sans, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -21,6 +21,13 @@ const fontMono = JetBrains_Mono({
   weight: ["500", "700"],
 });
 
+const fontHeading = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  display: "swap",
+  weight: ["500", "700"],
+});
+
 export const metadata: Metadata = {
   title: {
     default: `${brand.name} — ${brand.primaryClaim}`,
@@ -37,7 +44,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className={`${fontSans.variable} ${fontMono.variable} h-full antialiased`}>
+    <html lang="de" className={`${fontSans.variable} ${fontMono.variable} ${fontHeading.variable} h-full antialiased`}>
       <head>
         <script
           type="application/ld+json"

@@ -94,7 +94,7 @@ export default async function LoesungSlugPage({ params }: Props) {
               </Link>
               <Link
                 href="/roi/"
-                className="inline-flex items-center justify-center gap-2 rounded-md border border-slate-600 hover:bg-slate-800 px-6 py-3 text-base font-medium text-slate-300 transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-brand-500/40 bg-brand-500/10 px-6 py-3 text-base font-medium text-brand-200 transition-colors hover:bg-brand-500/20"
               >
                 ROI einschätzen
               </Link>
@@ -200,19 +200,19 @@ export default async function LoesungSlugPage({ params }: Props) {
           <div className="flex flex-wrap gap-3">
             <Link
               href="/raas-vs-kauf/"
-              className="rounded-md border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"
+              className="rounded-md border border-brand-500/40 bg-brand-500/10 px-4 py-2 text-sm text-brand-200 transition-colors hover:bg-brand-500/20"
             >
               Kauf vs. Miete vs. RaaS vergleichen →
             </Link>
             <Link
               href="/raas/"
-              className="rounded-md border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"
+              className="rounded-md border border-brand-500/40 bg-brand-500/10 px-4 py-2 text-sm text-brand-200 transition-colors hover:bg-brand-500/20"
             >
               RaaS-Pakete ansehen →
             </Link>
             <Link
               href="/roi/"
-              className="rounded-md border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors"
+              className="rounded-md border border-brand-500/40 bg-brand-500/10 px-4 py-2 text-sm text-brand-200 transition-colors hover:bg-brand-500/20"
             >
               ROI einschätzen →
             </Link>

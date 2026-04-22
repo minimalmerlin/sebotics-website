@@ -24,7 +24,7 @@ const industryImages: Record<string, string> = {
 
 export function IndustryGrid() {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="bg-slate-950 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -36,10 +36,10 @@ export function IndustryGrid() {
             <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-brand-600 mb-3">
               Nach Branche
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">
+            <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
               Für welche Branche automatisieren Sie?
             </h2>
-            <p className="mt-3 text-lg text-zinc-500 max-w-2xl">
+            <p className="mt-3 max-w-2xl text-lg text-zinc-400">
               Jede Branche hat andere operative Engpässe. Wir zeigen die passende Lösung mit Voraussetzungen, ROI und nächstem Schritt.
             </p>
           </motion.div>

@@ -14,7 +14,7 @@ export default function OpenGraphImage() {
       <div
         style={{
           alignItems: "stretch",
-          background: "linear-gradient(135deg, #030712 0%, #0e2045 45%, #2f5aae 100%)",
+          background: "linear-gradient(135deg, #030712 0%, #27092f 45%, #702080 100%)",
           color: "white",
           display: "flex",
           flexDirection: "column",

@@ -74,8 +74,8 @@ export function Header() {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "bg-white/95 backdrop-blur-md border-b border-zinc-200 shadow-sm"
-          : "bg-white border-b border-zinc-100"
+          ? "border-b border-zinc-800 bg-[#030712]/90 shadow-sm backdrop-blur-md"
+          : "border-b border-zinc-900 bg-[#030712]"
       )}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -102,52 +102,51 @@ export function Header() {
                 <div
                   key={item.href}
                   className="relative"
-                  onMouseEnter={() => setOpenDesktopMenu(item.href)}
                   onMouseLeave={() => setOpenDesktopMenu(null)}
-                  onFocusCapture={() => setOpenDesktopMenu(item.href)}
                   onBlurCapture={handleDesktopMenuBlur}
                 >
                   <button
                     type="button"
                     aria-expanded={isOpen}
                     aria-controls={submenuId}
+                    onMouseEnter={() => setOpenDesktopMenu(item.href)}
+                    onFocus={() => setOpenDesktopMenu(item.href)}
                     onClick={() => setOpenDesktopMenu(isOpen ? null : item.href)}
-                    className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-50 hover:text-zinc-900"
+                    className="flex items-center gap-1 rounded-lg px-3.5 py-2 text-sm font-medium text-zinc-300 transition-colors hover:bg-white/5 hover:text-white"
                   >
                     {item.label}
                     <ChevronDown
                       className={cn(
-                        "size-3.5 text-zinc-400 transition-transform duration-200",
+                        "size-3.5 text-zinc-500 transition-transform duration-200",
                         isOpen && "rotate-180"
                       )}
                     />
                   </button>
-                  <div className="absolute left-0 top-full pt-2">
-                    <div
-                      id={submenuId}
-                      className={cn(
-                        "w-64 rounded-xl border border-zinc-200 bg-white py-2 shadow-xl shadow-zinc-100/80 transition-all duration-150",
-                        isOpen ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-1 opacity-0"
-                      )}
-                    >
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="flex flex-col px-4 py-2.5 transition-colors hover:bg-zinc-50"
-                        >
-                          <span className="text-sm font-medium text-zinc-900">{child.label}</span>
-                          <span className="mt-0.5 text-xs text-zinc-500">{child.desc}</span>
-                        </Link>
-                      ))}
+                  {isOpen && (
+                    <div className="absolute left-0 top-full pt-2">
+                      <div
+                        id={submenuId}
+                        className="w-64 rounded-xl border border-zinc-800 bg-slate-950/95 py-2 shadow-xl shadow-black/30 backdrop-blur"
+                      >
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            className="flex flex-col px-4 py-2.5 transition-colors hover:bg-white/5"
+                          >
+                            <span className="text-sm font-medium text-zinc-100">{child.label}</span>
+                            <span className="mt-0.5 text-xs text-zinc-400">{child.desc}</span>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               ) : (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="px-3.5 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 rounded-lg hover:bg-zinc-50 transition-colors"
+                  className="rounded-lg px-3.5 py-2 text-sm font-medium text-zinc-300 transition-colors hover:bg-white/5 hover:text-white"
                 >
                   {item.label}
                 </Link>
@@ -157,7 +156,7 @@ export function Header() {
 
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-2 shrink-0">
-            <Link href="/kontakt/" className="px-3.5 py-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors">
+            <Link href="/kontakt/" className="px-3.5 py-2 text-sm font-medium text-zinc-300 transition-colors hover:text-white">
               Demo anfragen
             </Link>
             <Link
@@ -172,12 +171,12 @@ export function Header() {
           {/* Mobile trigger */}
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger
-              render={<Button variant="ghost" size="icon-sm" className="lg:hidden text-zinc-600" />}
+              render={<Button variant="ghost" size="icon-sm" className="lg:hidden text-zinc-300 hover:bg-white/5 hover:text-white" />}
             >
               <Menu className="size-5" />
             </SheetTrigger>
-            <SheetContent side="right" className="w-80 p-0">
-              <SheetHeader className="px-6 py-4 border-b border-zinc-100">
+            <SheetContent side="right" className="w-80 border-zinc-800 bg-slate-950 p-0 text-white">
+              <SheetHeader className="border-b border-zinc-800 px-6 py-4">
                 <SheetTitle className="text-left">
                   <Image
                     src="/logo.webp"
@@ -194,18 +193,18 @@ export function Header() {
                     <Link
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className="block px-2 py-1 text-sm font-semibold text-zinc-900 mb-1"
+                      className="mb-1 block px-2 py-1 text-sm font-semibold text-zinc-100"
                     >
                       {item.label}
                     </Link>
                     {item.children && (
-                      <div className="pl-2 border-l-2 border-zinc-100">
+                      <div className="border-l-2 border-zinc-800 pl-2">
                         {item.children.map((c) => (
                           <Link
                             key={c.href}
                             href={c.href}
                             onClick={() => setMobileOpen(false)}
-                            className="block py-1.5 px-2 text-sm text-zinc-500 hover:text-zinc-900"
+                            className="block px-2 py-1.5 text-sm text-zinc-400 hover:text-white"
                           >
                             {c.label}
                           </Link>
@@ -215,14 +214,14 @@ export function Header() {
                   </div>
                 ))}
               </nav>
-              <div className="px-4 pb-6 pt-2 border-t border-zinc-100 space-y-2">
+              <div className="space-y-2 border-t border-zinc-800 px-4 pb-6 pt-2">
                 <Link href="/konfigurator/" onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center gap-2 w-full rounded-lg bg-brand-500 hover:bg-brand-600 px-4 py-3 text-sm font-semibold text-white transition-colors"
                 >
                   Konfigurator starten
                 </Link>
                 <Link href="/kontakt/" onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center w-full rounded-lg border border-zinc-200 px-4 py-3 text-sm font-medium text-zinc-700 hover:bg-zinc-50 transition-colors"
+                  className="flex w-full items-center justify-center rounded-lg border border-zinc-700 px-4 py-3 text-sm font-medium text-zinc-200 transition-colors hover:bg-white/5"
                 >
                   Demo anfragen
                 </Link>

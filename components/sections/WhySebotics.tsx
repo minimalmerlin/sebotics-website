@@ -27,7 +27,7 @@ const differentiators = [
 
 export function WhySebotics() {
   return (
-    <section className="py-20 md:py-28 bg-white overflow-hidden">
+    <section className="overflow-hidden bg-[#050b17] py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Image */}
@@ -40,7 +40,7 @@ export function WhySebotics() {
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-zinc-100">
               <Image
-                src="https://images.unsplash.com/photo-1611095970003-8c62b9f7c9df?w=1000&q=80&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1000&q=80&auto=format&fit=crop"
                 alt="Serviceroboter im praktischen Einsatz"
                 fill
                 className="object-cover"
@@ -48,9 +48,9 @@ export function WhySebotics() {
               />
             </div>
             {/* Floating stat card */}
-            <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl border border-zinc-200 shadow-xl p-5 hidden sm:block">
-              <div className="text-3xl font-bold font-mono text-zinc-900">24h</div>
-              <div className="text-sm text-zinc-500 mt-1">Support-Reaktionszeit</div>
+            <div className="absolute -bottom-6 -right-6 hidden rounded-2xl border border-zinc-800 bg-slate-950 p-5 shadow-xl shadow-black/30 sm:block">
+              <div className="text-3xl font-bold font-mono text-white">24h</div>
+              <div className="mt-1 text-sm text-zinc-400">Support-Reaktionszeit</div>
             </div>
           </motion.div>
 
@@ -64,10 +64,10 @@ export function WhySebotics() {
             <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-brand-600 mb-4">
               Warum Sebotics
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-4">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
               Der schnellste Weg vom Use Case zur richtigen Lösung.
             </h2>
-            <p className="text-lg text-zinc-500 mb-10 leading-relaxed">
+            <p className="mb-10 text-lg leading-relaxed text-zinc-400">
               Wir strukturieren den gesamten Entscheidungsraum für Robotik — damit Sie nicht irgendeine, sondern die richtige Lösung für Ihren Betrieb einführen.
             </p>
 
@@ -78,8 +78,8 @@ export function WhySebotics() {
                     <Check className="size-3.5 text-brand-600" />
                   </div>
                   <div>
-                    <p className="font-semibold text-zinc-900 mb-0.5">{item.title}</p>
-                    <p className="text-sm text-zinc-500 leading-relaxed">{item.description}</p>
+                    <p className="mb-0.5 font-semibold text-white">{item.title}</p>
+                    <p className="text-sm leading-relaxed text-zinc-400">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -88,13 +88,13 @@ export function WhySebotics() {
             <div className="flex gap-3">
               <Link
                 href="/ueber-uns/"
-                className="rounded-xl border border-zinc-200 px-5 py-2.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50 transition-colors"
+                className="rounded-xl border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-200 transition-colors hover:bg-white/5"
               >
                 Über Sebotics
               </Link>
               <Link
                 href="/case-studies/"
-                className="rounded-xl border border-zinc-200 px-5 py-2.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50 transition-colors"
+                className="rounded-xl border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-200 transition-colors hover:bg-white/5"
               >
                 Case Studies ansehen
               </Link>

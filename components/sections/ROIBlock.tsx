@@ -44,7 +44,7 @@ const models = [
 
 export function ROIBlock() {
   return (
-    <section className="py-20 md:py-28 bg-white">
+    <section className="bg-slate-950 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
@@ -56,10 +56,10 @@ export function ROIBlock() {
             <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-brand-600 mb-3">
               Wirtschaftlichkeit
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">
+            <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
               Wann lohnt sich Robotik?
             </h2>
-            <p className="mt-3 text-lg text-zinc-500 max-w-2xl">
+            <p className="mt-3 max-w-2xl text-lg text-zinc-400">
               Bei klaren, wiederholbaren Aufgaben mit hoher Häufigkeit. Unser ROI-Check gibt eine fundierte Erstschätzung.
             </p>
           </motion.div>
@@ -70,26 +70,26 @@ export function ROIBlock() {
               <motion.div
                 key={p.metric}
                 variants={counterReveal}
-                className="rounded-2xl border border-zinc-200 bg-zinc-50 p-6"
+                className="rounded-2xl border border-zinc-800 bg-[#0b1220] p-6"
               >
-                <div className="text-2xl font-bold font-mono text-zinc-900">{p.metric}</div>
-                <div className="text-sm font-medium text-zinc-700 mt-1">{p.label}</div>
-                <div className="text-xs text-zinc-400 mt-1">{p.note}</div>
+                <div className="text-2xl font-bold font-mono text-white">{p.metric}</div>
+                <div className="mt-1 text-sm font-medium text-zinc-200">{p.label}</div>
+                <div className="mt-1 text-xs text-zinc-500">{p.note}</div>
               </motion.div>
             ))}
           </div>
 
           {/* Model comparison */}
           <motion.div variants={fadeUp}>
-            <h3 className="text-xl font-bold text-zinc-900 mb-6">Kauf · RaaS · Miete — was passt?</h3>
+            <h3 className="mb-6 text-xl font-bold text-white">Kauf · RaaS · Miete — was passt?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {models.map((model) => (
                 <div
                   key={model.name}
                   className={`rounded-2xl border p-6 flex flex-col ${
                     model.highlight
-                      ? "border-brand-200 bg-brand-50 ring-1 ring-brand-200"
-                      : "border-zinc-200 bg-white"
+                      ? "border-brand-500/40 bg-brand-900/20 ring-1 ring-brand-500/30"
+                      : "border-zinc-800 bg-[#0b1220]"
                   }`}
                 >
                   {model.badge && (
@@ -97,16 +97,16 @@ export function ROIBlock() {
                       {model.badge}
                     </span>
                   )}
-                  <h4 className="text-base font-bold text-zinc-900 mb-4">{model.name}</h4>
+                  <h4 className="mb-4 text-base font-bold text-white">{model.name}</h4>
                   <div className="space-y-1.5 mb-5 flex-1">
                     {model.pros.map((p) => (
-                      <div key={p} className="flex gap-2 text-sm text-zinc-700">
+                      <div key={p} className="flex gap-2 text-sm text-zinc-300">
                         <Check className="size-4 text-emerald-500 shrink-0 mt-0.5" />
                         {p}
                       </div>
                     ))}
                     {model.cons.map((c) => (
-                      <div key={c} className="flex gap-2 text-sm text-zinc-400">
+                      <div key={c} className="flex gap-2 text-sm text-zinc-500">
                         <span className="shrink-0 mt-0.5">–</span>
                         {c}
                       </div>
@@ -117,7 +117,7 @@ export function ROIBlock() {
                     className={`rounded-xl px-4 py-2.5 text-sm font-semibold text-center transition-colors ${
                       model.highlight
                         ? "bg-brand-500 hover:bg-brand-600 text-white"
-                        : "border border-zinc-200 hover:bg-zinc-50 text-zinc-700"
+                        : "border border-zinc-700 text-zinc-200 hover:bg-white/5"
                     }`}
                   >
                     {model.cta}
@@ -130,7 +130,7 @@ export function ROIBlock() {
           <motion.div variants={fadeUp} className="mt-8 text-center">
             <Link
               href="/roi/"
-              className="text-sm font-medium text-zinc-500 hover:text-zinc-900 transition-colors"
+              className="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
             >
               ROI für meinen Betrieb einschätzen →
             </Link>

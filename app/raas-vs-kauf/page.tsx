@@ -91,13 +91,13 @@ export default function RaasVsKaufPage() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/raas/" className="rounded-md border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+            <Link href="/raas/" className="rounded-md border border-brand-500/40 bg-brand-500/10 px-4 py-2 text-sm text-brand-200 transition-colors hover:bg-brand-500/20">
               RaaS-Pakete ansehen →
             </Link>
-            <Link href="/robotik-mieten/" className="rounded-md border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+            <Link href="/robotik-mieten/" className="rounded-md border border-brand-500/40 bg-brand-500/10 px-4 py-2 text-sm text-brand-200 transition-colors hover:bg-brand-500/20">
               Mietoptionen ansehen →
             </Link>
-            <Link href="/roi/" className="rounded-md border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors">
+            <Link href="/roi/" className="rounded-md border border-brand-500/40 bg-brand-500/10 px-4 py-2 text-sm text-brand-200 transition-colors hover:bg-brand-500/20">
               ROI-Check →
             </Link>
           </div>
