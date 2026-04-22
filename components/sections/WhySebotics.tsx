@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { stagger, fadeLeft, fadeRight, viewportConfig } from "@/lib/animations";
+import { fadeLeft, fadeRight, viewportConfig } from "@/lib/animations";
 
 const differentiators = [
   {

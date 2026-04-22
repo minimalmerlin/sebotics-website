@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, ChevronDown, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -68,17 +69,15 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-6">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="flex items-center gap-1.5">
-              <div className="size-7 rounded bg-brand-500 flex items-center justify-center shrink-0">
-                <svg viewBox="0 0 20 20" className="size-4 fill-white" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 5c-3.314 0-6 2.686-6 6h2c0-2.21 1.79-4 4-4s4 1.79 4 4h2c0-3.314-2.686-6-6-6zm-4 7v2h8v-2H6z"/>
-                </svg>
-              </div>
-              <span className="text-[17px] font-bold tracking-tight text-zinc-900">
-                Sebo<span className="text-brand-500">tics</span>
-              </span>
-            </div>
+          <Link href="/" className="flex items-center shrink-0">
+            <Image
+              src="/logo.webp"
+              alt="Sebotics"
+              width={300}
+              height={122}
+              className="h-9 w-auto object-contain"
+              preload
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -139,9 +138,13 @@ export function Header() {
             <SheetContent side="right" className="w-80 p-0">
               <SheetHeader className="px-6 py-4 border-b border-zinc-100">
                 <SheetTitle className="text-left">
-                  <span className="text-lg font-bold text-zinc-900">
-                    Sebo<span className="text-brand-500">tics</span>
-                  </span>
+                  <Image
+                    src="/logo.webp"
+                    alt="Sebotics"
+                    width={300}
+                    height={122}
+                    className="h-8 w-auto object-contain"
+                  />
                 </SheetTitle>
               </SheetHeader>
               <nav className="px-4 py-4 overflow-y-auto">

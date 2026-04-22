@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { industries, solutions } from "@/lib/config";
+import { industries } from "@/lib/config";
 
 type Step = 1 | 2 | 3 | "result";
 

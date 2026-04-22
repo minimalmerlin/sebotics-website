@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
-import { fadeUp, stagger, viewportConfig } from "@/lib/animations";
+import { fadeUp, stagger } from "@/lib/animations";
 import { brand, proofAssets } from "@/lib/config";
 
 export function HeroDecisionSection() {
@@ -15,7 +15,7 @@ export function HeroDecisionSection() {
         src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1800&q=85&auto=format&fit=crop"
         alt="Moderner Serviceroboter im Einsatz"
         fill
-        priority
+        preload
         className="object-cover object-center opacity-40"
         sizes="100vw"
       />
