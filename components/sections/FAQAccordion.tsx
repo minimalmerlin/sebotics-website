@@ -25,7 +25,7 @@ export function FAQAccordion({ title = "Häufige Fragen", faqs, withSchema = fal
           variants={stagger}
         >
           <motion.div variants={fadeUp} className="mb-12">
-            <p className={`text-[11px] font-mono uppercase tracking-[0.15em] mb-3 ${dark ? "text-cyan-400" : "text-cyan-600"}`}>
+            <p className={`text-[11px] font-mono uppercase tracking-[0.15em] mb-3 ${dark ? "text-brand-400" : "text-brand-600"}`}>
               FAQ
             </p>
             <h2 className={`text-3xl md:text-4xl font-bold tracking-tight ${dark ? "text-white" : "text-zinc-900"}`}>

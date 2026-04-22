@@ -49,7 +49,7 @@ export function Footer() {
           </div>
           <Link
             href="/konfigurator/"
-            className="inline-flex items-center gap-2 shrink-0 rounded-xl bg-cyan-500 hover:bg-cyan-400 px-6 py-3 text-sm font-semibold text-white transition-colors"
+            className="inline-flex items-center gap-2 shrink-0 rounded-xl bg-brand-500 hover:bg-brand-400 px-6 py-3 text-sm font-semibold text-white transition-colors"
           >
             Konfigurator starten
             <ArrowRight className="size-3.5" />
@@ -82,13 +82,13 @@ export function Footer() {
         {/* Brand + legal */}
         <div className="border-t border-zinc-800 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="size-6 rounded bg-cyan-500 flex items-center justify-center">
+            <div className="size-6 rounded bg-brand-500 flex items-center justify-center">
               <svg viewBox="0 0 20 20" className="size-3.5 fill-white" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 5c-3.314 0-6 2.686-6 6h2c0-2.21 1.79-4 4-4s4 1.79 4 4h2c0-3.314-2.686-6-6-6zm-4 7v2h8v-2H6z"/>
               </svg>
             </div>
             <span className="text-sm font-bold text-white">
-              Sebo<span className="text-cyan-500">tics</span>
+              Sebo<span className="text-brand-500">tics</span>
             </span>
             <span className="text-zinc-700 ml-2 text-xs">
               © {new Date().getFullYear()} Sebotics. Alle Rechte vorbehalten.

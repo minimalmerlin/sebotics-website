@@ -53,7 +53,7 @@ export function ROIBlock() {
           variants={stagger}
         >
           <motion.div variants={fadeUp} className="mb-14">
-            <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-cyan-600 mb-3">
+            <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-brand-600 mb-3">
               Wirtschaftlichkeit
             </p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">
@@ -88,12 +88,12 @@ export function ROIBlock() {
                   key={model.name}
                   className={`rounded-2xl border p-6 flex flex-col ${
                     model.highlight
-                      ? "border-cyan-200 bg-cyan-50 ring-1 ring-cyan-200"
+                      ? "border-brand-200 bg-brand-50 ring-1 ring-brand-200"
                       : "border-zinc-200 bg-white"
                   }`}
                 >
                   {model.badge && (
-                    <span className="inline-block mb-3 text-[10px] font-mono font-semibold uppercase tracking-widest text-cyan-700 bg-cyan-100 rounded-full px-2.5 py-0.5 w-fit">
+                    <span className="inline-block mb-3 text-[10px] font-mono font-semibold uppercase tracking-widest text-brand-700 bg-brand-100 rounded-full px-2.5 py-0.5 w-fit">
                       {model.badge}
                     </span>
                   )}
@@ -116,7 +116,7 @@ export function ROIBlock() {
                     href={model.href}
                     className={`rounded-xl px-4 py-2.5 text-sm font-semibold text-center transition-colors ${
                       model.highlight
-                        ? "bg-cyan-500 hover:bg-cyan-600 text-white"
+                        ? "bg-brand-500 hover:bg-brand-600 text-white"
                         : "border border-zinc-200 hover:bg-zinc-50 text-zinc-700"
                     }`}
                   >

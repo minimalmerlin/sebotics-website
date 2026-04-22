@@ -17,7 +17,7 @@ export function ProcessTimeline() {
           variants={stagger}
         >
           <motion.div variants={fadeUp} className="mb-16 max-w-2xl">
-            <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-cyan-400 mb-4">
+            <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-brand-400 mb-4">
               Integrationsprozess
             </p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
@@ -43,7 +43,7 @@ export function ProcessTimeline() {
 
                 <div className="relative z-10 flex lg:flex-col items-start lg:items-start gap-4 lg:gap-0 pb-8 lg:pb-0 pl-0 lg:pl-0">
                   {/* Number */}
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 text-xs font-mono font-bold text-cyan-400">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900 text-xs font-mono font-bold text-brand-400">
                     {step.step}
                   </div>
 
@@ -73,7 +73,7 @@ export function ProcessTimeline() {
             <div className="flex gap-3 shrink-0">
               <Link
                 href="/konfigurator/"
-                className="inline-flex items-center gap-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-white transition-colors"
+                className="inline-flex items-center gap-2 rounded-xl bg-brand-500 hover:bg-brand-400 px-5 py-2.5 text-sm font-semibold text-white transition-colors"
               >
                 Konfigurator starten <ArrowRight className="size-3.5" />
               </Link>

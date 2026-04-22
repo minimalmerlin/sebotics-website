@@ -61,7 +61,7 @@ export function WhySebotics() {
             viewport={viewportConfig}
             variants={fadeRight}
           >
-            <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-cyan-600 mb-4">
+            <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-brand-600 mb-4">
               Warum Sebotics
             </p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 mb-4">
@@ -74,8 +74,8 @@ export function WhySebotics() {
             <div className="space-y-5 mb-10">
               {differentiators.map((item) => (
                 <div key={item.title} className="flex gap-4">
-                  <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-cyan-50 border border-cyan-200 mt-0.5">
-                    <Check className="size-3.5 text-cyan-600" />
+                  <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-brand-50 border border-brand-200 mt-0.5">
+                    <Check className="size-3.5 text-brand-600" />
                   </div>
                   <div>
                     <p className="font-semibold text-zinc-900 mb-0.5">{item.title}</p>

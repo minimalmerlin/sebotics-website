@@ -12,7 +12,7 @@ export function MobileCTABar() {
         </Link>
         <Link
           href="/konfigurator/"
-          className="flex-1 rounded-xl bg-cyan-500 hover:bg-cyan-600 px-4 py-2.5 text-center text-sm font-semibold text-white transition-colors"
+          className="flex-1 rounded-xl bg-brand-500 hover:bg-brand-600 px-4 py-2.5 text-center text-sm font-semibold text-white transition-colors"
         >
           Konfigurator
         </Link>

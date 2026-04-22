@@ -70,13 +70,13 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
             <div className="flex items-center gap-1.5">
-              <div className="size-7 rounded bg-cyan-500 flex items-center justify-center shrink-0">
+              <div className="size-7 rounded bg-brand-500 flex items-center justify-center shrink-0">
                 <svg viewBox="0 0 20 20" className="size-4 fill-white" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm0 5c-3.314 0-6 2.686-6 6h2c0-2.21 1.79-4 4-4s4 1.79 4 4h2c0-3.314-2.686-6-6-6zm-4 7v2h8v-2H6z"/>
                 </svg>
               </div>
               <span className="text-[17px] font-bold tracking-tight text-zinc-900">
-                Sebo<span className="text-cyan-500">tics</span>
+                Sebo<span className="text-brand-500">tics</span>
               </span>
             </div>
           </Link>
@@ -122,7 +122,7 @@ export function Header() {
             </Link>
             <Link
               href="/konfigurator/"
-              className="inline-flex items-center gap-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-600 px-4 py-2 text-sm font-semibold text-white transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-brand-500 hover:bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition-colors"
             >
               Konfigurator
               <ArrowRight className="size-3.5" />
@@ -140,7 +140,7 @@ export function Header() {
               <SheetHeader className="px-6 py-4 border-b border-zinc-100">
                 <SheetTitle className="text-left">
                   <span className="text-lg font-bold text-zinc-900">
-                    Sebo<span className="text-cyan-500">tics</span>
+                    Sebo<span className="text-brand-500">tics</span>
                   </span>
                 </SheetTitle>
               </SheetHeader>
@@ -173,7 +173,7 @@ export function Header() {
               </nav>
               <div className="px-4 pb-6 pt-2 border-t border-zinc-100 space-y-2">
                 <Link href="/konfigurator/" onClick={() => setMobileOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full rounded-lg bg-cyan-500 hover:bg-cyan-600 px-4 py-3 text-sm font-semibold text-white transition-colors"
+                  className="flex items-center justify-center gap-2 w-full rounded-lg bg-brand-500 hover:bg-brand-600 px-4 py-3 text-sm font-semibold text-white transition-colors"
                 >
                   Konfigurator starten
                 </Link>

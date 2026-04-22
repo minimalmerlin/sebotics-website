@@ -33,8 +33,8 @@ export function HeroDecisionSection() {
         >
           {/* Label */}
           <motion.div variants={fadeUp} className="mb-8">
-            <span className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-mono font-medium uppercase tracking-widest text-cyan-400">
-              <span className="size-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="inline-flex items-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-mono font-medium uppercase tracking-widest text-brand-400">
+              <span className="size-1.5 rounded-full bg-brand-400 animate-pulse" />
               Robotics Solution Partner · DACH
             </span>
           </motion.div>
@@ -59,7 +59,7 @@ export function HeroDecisionSection() {
           <motion.div variants={fadeUp} className="mt-10 flex flex-col sm:flex-row gap-3">
             <Link
               href="/konfigurator/"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 px-7 py-3.5 text-base font-semibold text-white transition-all duration-200 shadow-lg shadow-cyan-500/25"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 hover:bg-brand-400 px-7 py-3.5 text-base font-semibold text-white transition-all duration-200 shadow-lg shadow-brand-500/25"
             >
               Konfigurator starten
               <ArrowRight className="size-4" />

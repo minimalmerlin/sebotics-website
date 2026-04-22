@@ -30,12 +30,12 @@ export function ConfiguratorCTA({ variant = "primary" }: ConfiguratorCTAProps) {
                 />
               </div>
               <div className="relative z-10">
-                <Settings className="size-8 text-cyan-400 mb-6" />
+                <Settings className="size-8 text-brand-400 mb-6" />
                 <h3 className="text-xl font-bold text-white mb-2">Konfigurator starten</h3>
                 <p className="text-zinc-400 text-sm leading-relaxed mb-6">
                   In 3 Schritten zum passenden Robotertyp und Kostenmodell — kostenlos und unverbindlich.
                 </p>
-                <div className="flex items-center gap-2 text-sm font-semibold text-cyan-400 group-hover:gap-3 transition-all">
+                <div className="flex items-center gap-2 text-sm font-semibold text-brand-400 group-hover:gap-3 transition-all">
                   Jetzt konfigurieren <ArrowRight className="size-4" />
                 </div>
               </div>
@@ -84,7 +84,7 @@ export function ConfiguratorCTA({ variant = "primary" }: ConfiguratorCTAProps) {
         >
           <motion.p
             variants={fadeUp}
-            className="text-[11px] font-mono uppercase tracking-[0.15em] text-cyan-400 mb-5"
+            className="text-[11px] font-mono uppercase tracking-[0.15em] text-brand-400 mb-5"
           >
             Nächster Schritt
           </motion.p>
@@ -103,7 +103,7 @@ export function ConfiguratorCTA({ variant = "primary" }: ConfiguratorCTAProps) {
           <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/konfigurator/"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 px-8 py-3.5 text-base font-semibold text-white transition-all shadow-lg shadow-cyan-500/20"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 hover:bg-brand-400 px-8 py-3.5 text-base font-semibold text-white transition-all shadow-lg shadow-brand-500/20"
             >
               <Settings className="size-4" />
               Konfigurator starten

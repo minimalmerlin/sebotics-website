@@ -33,7 +33,7 @@ export function SolutionGrid() {
           variants={stagger}
         >
           <motion.div variants={fadeUp} className="mb-14">
-            <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-cyan-600 mb-3">
+            <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-brand-600 mb-3">
               Lösungen
             </p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">
@@ -65,13 +65,13 @@ export function SolutionGrid() {
 
                   {/* Content */}
                   <div className="flex flex-col flex-1 p-6">
-                    <h3 className="text-base font-bold text-zinc-900 mb-2 group-hover:text-cyan-600 transition-colors">
+                    <h3 className="text-base font-bold text-zinc-900 mb-2 group-hover:text-brand-600 transition-colors">
                       {solution.title}
                     </h3>
                     <p className="text-sm text-zinc-500 leading-relaxed flex-1 line-clamp-2">
                       {solution.summary}
                     </p>
-                    <div className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-cyan-600">
+                    <div className="mt-4 flex items-center gap-1.5 text-sm font-semibold text-brand-600">
                       Details ansehen
                       <ArrowUpRight className="size-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>

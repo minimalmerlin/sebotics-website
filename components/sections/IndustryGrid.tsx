@@ -33,7 +33,7 @@ export function IndustryGrid() {
           variants={stagger}
         >
           <motion.div variants={fadeUp} className="mb-14">
-            <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-cyan-600 mb-3">
+            <p className="text-[11px] font-mono uppercase tracking-[0.15em] text-brand-600 mb-3">
               Nach Branche
             </p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900">
@@ -64,13 +64,13 @@ export function IndustryGrid() {
 
                   {/* Content */}
                   <div className="relative mt-auto p-6">
-                    <p className="text-[11px] font-mono uppercase tracking-widest text-cyan-400 mb-2">
+                    <p className="text-[11px] font-mono uppercase tracking-widest text-brand-400 mb-2">
                       Branchenlösung
                     </p>
                     <h3 className="text-lg font-bold text-white mb-3">
                       {industry.title}
                     </h3>
-                    <div className="flex items-center gap-1.5 text-sm font-medium text-cyan-400 group-hover:gap-2.5 transition-all duration-200">
+                    <div className="flex items-center gap-1.5 text-sm font-medium text-brand-400 group-hover:gap-2.5 transition-all duration-200">
                       Ansehen
                       <ArrowRight className="size-3.5" />
                     </div>
