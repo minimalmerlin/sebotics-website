@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/co
 import { cn } from "@/lib/utils";
 
 const nav = [
+  { label: "Start 2", href: "/start-2/" },
   {
     label: "Lösungen",
     href: "/loesungen/",
